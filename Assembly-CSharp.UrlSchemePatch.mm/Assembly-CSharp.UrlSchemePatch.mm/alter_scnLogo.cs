@@ -12,6 +12,7 @@ namespace Assembly_CSharp
         private void Exit()
         {
             Debug.Log("Hi from MonoMod! (URL Scheme Patch 0.0.1s)");
+            RPCHTTPServer.MakeServer();
             orig_Exit();
         }
     }

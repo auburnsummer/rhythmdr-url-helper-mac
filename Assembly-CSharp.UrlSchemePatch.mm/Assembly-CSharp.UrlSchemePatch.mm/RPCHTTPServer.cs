@@ -11,11 +11,22 @@ namespace Assembly_CSharp
     {
         public static HttpListener myListener;
 
-        public static void StartServer()
+        public static void MakeServer()
         {
             myListener = new HttpListener();
-            myListener.Prefixes.Add("http://localhost:49812/");
-            myListener.Start();
+        }
+
+        public static void StartServer()
+        {
+            try
+            {
+                myListener.Prefixes.Add("http://localhost:49812/");
+                myListener.Start();
+            }
+            catch (HttpListenerException ex)
+            {
+                Debug.Log("Server's already been started!");
+            }
         }
 
         public static void StopServer()
