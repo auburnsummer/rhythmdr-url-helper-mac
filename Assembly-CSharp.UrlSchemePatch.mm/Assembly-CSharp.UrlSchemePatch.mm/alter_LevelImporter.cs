@@ -27,5 +27,21 @@ namespace Assembly_CSharp
         {
             base.StartCoroutine(this.AddContent(zipPath, filename));
         }
+
+
+
+        public extern void orig_set_Showing(bool showing);
+        public void set_Showing(bool showing)
+        {
+
+            orig_set_Showing(showing);
+            // refresh if we came into level select directly
+            if (!showing && !scnCLS.instance.ShowingWard)
+            {
+                scnBase.instance.StartCoroutine(((patch_scnCLS)scnCLS.instance).ReloadAfterFastImport());
+                base.wrldCLS.infoPanel.UpdateShortcutsRow(CLSInfoPanel.LibraryDefaultShortcuts);
+            }
+
+        }
     }
 }

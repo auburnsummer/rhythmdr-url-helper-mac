@@ -82,6 +82,11 @@ namespace Assembly_CSharp
                 ((patch_LevelImporter)scnCLS.instance.levelImporter).AddLevel(zp, filename);
             }
 
+            if (command == "Refresh")
+            {
+                scnBase.instance.StartCoroutine(scnCLS.instance.LoadLevelsData(-1));
+            }
+
             return command;
 
         }

@@ -11,7 +11,7 @@ namespace Assembly_CSharp
         private extern void orig_Exit();
         private void Exit()
         {
-            Debug.Log("Hi from MonoMod! (URL Scheme Patch 0.0.1s)");
+            Debug.Log("Hi from MonoMod! (URL Scheme Patch 0.0.1a)");
             RPCHTTPServer.MakeServer();
             orig_Exit();
         }
