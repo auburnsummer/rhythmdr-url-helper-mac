@@ -16,7 +16,7 @@ on open location this_URL
 	
 	-- If it isn't, we can start it with an argument.
 	if rdIsRunning then
-		display dialog "Rd is already running, I haven't done this yet!"
+		do shell script "python3 " & "\"" & helperPathP & "\"" & " \"" & this_url & "\""
 	else
 		do shell script "open -b com.7thBeat.RhythmDoctorEditor --args " & "\"" & this_URL & "\""
 	end if
